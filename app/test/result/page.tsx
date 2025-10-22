@@ -3,7 +3,7 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const mbtiDescriptions: Record<string, { name: string; desc: string; traits: string[] }> = {
     INTJ: {
@@ -88,7 +88,7 @@ const mbtiDescriptions: Record<string, { name: string; desc: string; traits: str
     },
 };
 
-export default function TestResultPage() {
+function TestResultContent() {
     const searchParams = useSearchParams();
     const [mbti, setMBTI] = useState<string>("");
 
@@ -161,5 +161,21 @@ export default function TestResultPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function TestResultPage() {
+    return (
+        <Suspense
+            fallback={
+                <div className="min-h-screen bg-linear-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center">
+                    <div className="text-center">
+                        <p className="text-gray-600">결과를 불러오는 중...</p>
+                    </div>
+                </div>
+            }
+        >
+            <TestResultContent />
+        </Suspense>
     );
 }
