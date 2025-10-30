@@ -7,12 +7,17 @@ export default function HomePage() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <div className="flex justify-center items-center gap-2 mb-6">
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-800">MBTI 매칭</h1>
+                        <span className="text-4xl">🐿️</span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+                            다람쥐 도토리 매칭
+                        </h1>
+                        <span className="text-4xl">🌰</span>
                     </div>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        MBTI 기반 맞춤 매칭 서비스로
+                        당신은 어떤 다람쥐인가요?
                         <br />
-                        당신과 딱 맞는 모임을 찾아드릴게요
+                        똑똑한 도토리 분석으로 딱 맞는 다람쥐 친구를
+                        찾아드릴게요! 🌳
                     </p>
                 </div>
 
@@ -24,13 +29,15 @@ export default function HomePage() {
                             <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-purple-200">
                                 <div className="text-center">
                                     <div className="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                                        <span className="text-3xl">🧠</span>
+                                        <span className="text-3xl">🐿️</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-4">내 MBTI를 알아요</h3>
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                                        나는 이미 현명한 다람쥐!
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        이미 MBTI 유형을 알고 계신다면
+                                        내 다람쥐 유형을 이미 알고 있다면
                                         <br />
-                                        바로 선택해주세요
+                                        바로 도토리 바구니로 직행하세요! 🌰
                                     </p>
                                 </div>
                             </div>
@@ -41,13 +48,15 @@ export default function HomePage() {
                             <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-pink-200">
                                 <div className="text-center">
                                     <div className="w-20 h-20 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pink-200 transition-colors">
-                                        <span className="text-3xl">❓</span>
+                                        <span className="text-3xl">🌿</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-800 mb-4">잘 모르겠어요, 간단 테스트 할래요</h3>
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                                        궁금해요, 나는 어떤 다람쥐?
+                                    </h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        빠른 테스트로
+                                        나뭇잎 사이로 숨어있는
                                         <br />
-                                        당신의 MBTI를 알아보세요
+                                        나만의 다람쥐 정체성을 찾아보세요! 🍃
                                     </p>
                                 </div>
                             </div>
@@ -58,9 +67,11 @@ export default function HomePage() {
                     <div className="text-center mt-16">
                         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-2xl mx-auto">
                             <p className="text-gray-500 text-sm leading-relaxed">
-                                💡 MBTI 기반 맞춤 매칭 서비스로
+                                🌰 도토리 성격 분석을 통해
                                 <br />
-                                당신에게 딱 맞는 연결고리를 찾아드릴게요
+                                당신에게 딱 맞는 다람쥐 친구를 소개해드려요!
+                                <br />
+                                숲속에서 가장 행복한 매칭을 경험해보세요 🌲✨
                             </p>
                         </div>
                     </div>

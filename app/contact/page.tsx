@@ -1,6 +1,14 @@
 "use client";
 
-import { ArrowLeft, Calendar, MapPin, Phone, Send, User, Users } from "lucide-react";
+import {
+    ArrowLeft,
+    Calendar,
+    MapPin,
+    Phone,
+    Send,
+    User,
+    Users,
+} from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -24,7 +32,9 @@ export default function ContactPage() {
         }
     }, []);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
             ...prev,
@@ -35,7 +45,14 @@ export default function ContactPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.contact || !formData.location || !formData.gender || !formData.age || !mbti) {
+        if (
+            !formData.name ||
+            !formData.contact ||
+            !formData.location ||
+            !formData.gender ||
+            !formData.age ||
+            !mbti
+        ) {
             alert("모든 필드를 입력해주세요.");
             return;
         }
@@ -74,18 +91,29 @@ export default function ContactPage() {
             <div className="container mx-auto px-4 py-8">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
+                    >
                         <ArrowLeft className="w-5 h-5" />
                         <span>돌아가기</span>
                     </Link>
-                    {mbti && <div className="bg-purple-100 text-purple-700 px-4 py-2 rounded-xl font-semibold">{mbti}</div>}
+                    {mbti && (
+                        <div className="bg-purple-100 text-purple-700 px-4 py-2 rounded-xl font-semibold">
+                            {mbti}
+                        </div>
+                    )}
                 </div>
 
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">연락처 정보를 입력해주세요</h1>
-                        <p className="text-gray-600 text-lg">맞춤 매칭 서비스를 위해 필요한 정보입니다</p>
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                            다람쥐 친구 정보를 알려주세요! 🐿️
+                        </h1>
+                        <p className="text-gray-600 text-lg">
+                            딱 맞는 다람쥐 친구 매칭을 위해 필요한 정보예요 🌰
+                        </p>
                     </div>
 
                     {/* Form */}
@@ -93,9 +121,12 @@ export default function ContactPage() {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Name Field */}
                             <div>
-                                <label htmlFor="name" className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
+                                <label
+                                    htmlFor="name"
+                                    className="flex items-center gap-2 text-gray-700 font-semibold mb-3"
+                                >
                                     <User className="w-5 h-5" />
-                                    이름 (닉네임)
+                                    다람쥐 이름 (닉네임)
                                 </label>
                                 <input
                                     type="text"
@@ -103,7 +134,7 @@ export default function ContactPage() {
                                     name="name"
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    placeholder="성함이나 닉네임을 입력해주세요"
+                                    placeholder="숲에서 불릴 이름이나 닉네임을 입력해주세요"
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                                     required
                                 />
@@ -111,9 +142,12 @@ export default function ContactPage() {
 
                             {/* Contact Field */}
                             <div>
-                                <label htmlFor="contact" className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
+                                <label
+                                    htmlFor="contact"
+                                    className="flex items-center gap-2 text-gray-700 font-semibold mb-3"
+                                >
                                     <Phone className="w-5 h-5" />
-                                    연락처
+                                    나뭇잎 우편함 (연락처)
                                 </label>
                                 <input
                                     type="text"
@@ -121,7 +155,7 @@ export default function ContactPage() {
                                     name="contact"
                                     value={formData.contact}
                                     onChange={handleInputChange}
-                                    placeholder="전화번호 또는 이메일을 입력해주세요"
+                                    placeholder="도토리 소식을 받을 전화번호나 이메일을 입력해주세요"
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                                     required
                                 />
@@ -129,9 +163,12 @@ export default function ContactPage() {
 
                             {/* Location Field */}
                             <div>
-                                <label htmlFor="location" className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
+                                <label
+                                    htmlFor="location"
+                                    className="flex items-center gap-2 text-gray-700 font-semibold mb-3"
+                                >
                                     <MapPin className="w-5 h-5" />
-                                    지역
+                                    서식지 (지역)
                                 </label>
                                 <input
                                     type="text"
@@ -139,7 +176,7 @@ export default function ContactPage() {
                                     name="location"
                                     value={formData.location}
                                     onChange={handleInputChange}
-                                    placeholder="거주 지역을 입력해주세요 (예: 서울시 강남구)"
+                                    placeholder="어느 숲에 살고 계신가요? (예: 서울숲 강남구역)"
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                                     required
                                 />
@@ -147,9 +184,12 @@ export default function ContactPage() {
 
                             {/* Gender Field */}
                             <div>
-                                <label htmlFor="gender" className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
+                                <label
+                                    htmlFor="gender"
+                                    className="flex items-center gap-2 text-gray-700 font-semibold mb-3"
+                                >
                                     <Users className="w-5 h-5" />
-                                    성별
+                                    다람쥐 종류
                                 </label>
                                 <select
                                     id="gender"
@@ -159,18 +199,25 @@ export default function ContactPage() {
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                                     required
                                 >
-                                    <option value="">성별을 선택해주세요</option>
-                                    <option value="남성">남성</option>
-                                    <option value="여성">여성</option>
-                                    <option value="기타">기타</option>
+                                    <option value="">
+                                        다람쥐 종류를 선택해주세요
+                                    </option>
+                                    <option value="남성">수컷 다람쥐</option>
+                                    <option value="여성">암컷 다람쥐</option>
+                                    <option value="기타">
+                                        자유로운 다람쥐
+                                    </option>
                                 </select>
                             </div>
 
                             {/* Age Field */}
                             <div>
-                                <label htmlFor="age" className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
+                                <label
+                                    htmlFor="age"
+                                    className="flex items-center gap-2 text-gray-700 font-semibold mb-3"
+                                >
                                     <Calendar className="w-5 h-5" />
-                                    나이
+                                    나이테 (나이)
                                 </label>
                                 <select
                                     id="age"
@@ -180,14 +227,30 @@ export default function ContactPage() {
                                     className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-purple-400 focus:bg-white transition-all"
                                     required
                                 >
-                                    <option value="">나이를 선택해주세요</option>
-                                    <option value="20대 초반">20대 초반 (20-23세)</option>
-                                    <option value="20대 중반">20대 중반 (24-26세)</option>
-                                    <option value="20대 후반">20대 후반 (27-29세)</option>
-                                    <option value="30대 초반">30대 초반 (30-33세)</option>
-                                    <option value="30대 중반">30대 중반 (34-36세)</option>
-                                    <option value="30대 후반">30대 후반 (37-39세)</option>
-                                    <option value="40대 이상">40대 이상</option>
+                                    <option value="">
+                                        나이테를 선택해주세요
+                                    </option>
+                                    <option value="20대 초반">
+                                        새싹 다람쥐 (20-23세)
+                                    </option>
+                                    <option value="20대 중반">
+                                        어린 다람쥐 (24-26세)
+                                    </option>
+                                    <option value="20대 후반">
+                                        청년 다람쥐 (27-29세)
+                                    </option>
+                                    <option value="30대 초반">
+                                        성숙한 다람쥐 (30-33세)
+                                    </option>
+                                    <option value="30대 중반">
+                                        경험 많은 다람쥐 (34-36세)
+                                    </option>
+                                    <option value="30대 후반">
+                                        현명한 다람쥐 (37-39세)
+                                    </option>
+                                    <option value="40대 이상">
+                                        숲의 어른 다람쥐
+                                    </option>
                                 </select>
                             </div>
 
@@ -200,12 +263,12 @@ export default function ContactPage() {
                                 {isSubmitting ? (
                                     <>
                                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                                        제출 중...
+                                        도토리 배송 중...
                                     </>
                                 ) : (
                                     <>
                                         <Send className="w-5 h-5" />
-                                        제출하기
+                                        다람쥐 친구 찾기 시작! 🌰
                                     </>
                                 )}
                             </button>
@@ -215,9 +278,10 @@ export default function ContactPage() {
                     {/* Privacy Notice */}
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mt-6 text-center">
                         <p className="text-gray-500 text-sm leading-relaxed">
-                            🔒 입력하신 개인정보는 매칭 서비스 목적으로만 사용되며
+                            🌰 입력하신 다람쥐 정보는 친구 매칭 목적으로만
+                            사용되며
                             <br />
-                            안전하게 보호됩니다
+                            숲의 비밀처럼 안전하게 보호됩니다 🌳
                         </p>
                     </div>
                 </div>
